@@ -66,40 +66,20 @@
       </nav>
 </header>
 
-<main role="main">
+<main role="main" class="pl-3 ">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <p class="lead text-muted">Hey there! I am excited to see you here! You can write me right now</p>
-      <p>
-        <a href="mailto: wencheeh99j@gmail.com" class="btn btn-primary my-2">Mail me</a>
-       
-      </p>
-    </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
+  <h1 class="pt-4  pb-5 ">Recents posts </h1>
     {%for post in posts.all %}
-      <div class="row"> 
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <h2>{{post.post_title}}</h2>
-            <img class="img-fluid " src="{{post.post_image.url}}" height = 300 width =300 alt="">
-            <div class="card-body">
-              <p class="card-text">{{post.post_text}} <br><br>
-                {{post.post_date}}
-            </p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
+        <a href=""><h2>{{post.post_title}}</h2></a>  <br>
+        <img class="img-fluid " src="{{post.post_image.url}}" height = 300 width =300 alt="">
+        <br> <br>
+        <p>{{post.get_summary}}
+        </p>
+        {{post.post_date}}
+        <br>    
+          
       {% endfor %}
-    </div>
-  </div>
-
+   
 </main>
 
 
@@ -110,4 +90,4 @@
 
       
   </body>
-</html>
+</html> 
